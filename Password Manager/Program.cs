@@ -48,9 +48,9 @@ namespace Password_Manager
                 Console.SetCursorPosition(0, 1);
                 Console.Write("Введите команду: ");
 
-                switch (int.Parse(Console.ReadLine()))
+                switch (Console.ReadLine())
                 {
-                    case 1:
+                    case "1":
                         Console.Write("\nВведите ресурс:");
                         switch (Console.ReadLine())
                         {
@@ -66,10 +66,13 @@ namespace Password_Manager
                             case "меил.русь":
                                 Console.WriteLine("Пароль - " + passMail);
                                 break;
+                            default:
+                                Console.Write("Неизвестный ресурс");
+                                break;
                         }
                         Console.ReadKey(); Console.Clear(); break;
 
-                    case 2:
+                    case "2":
                         Console.Write("\nВведите ресурс: ");
 
                         switch (Console.ReadLine())
@@ -94,9 +97,15 @@ namespace Password_Manager
                                 userPassword = Console.ReadLine();
                                 passMail = userPassword;
                                 break;
+                            default:
+                                Console.Write("Неизвестный ресурс");
+                                break;
                         }
                         Console.WriteLine($"\nПароль успешно поменялся на {userPassword} \n-аххаха чувак ты что серьезно что это за пароль XD");
-                        Console.ReadKey(); Console.Clear(); break;
+                        Console.ReadKey(); Console.Clear();break;
+                    default:
+                        Console.Write("Неизвестная команда");
+                        break;
                 }
             }
         }
