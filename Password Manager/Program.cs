@@ -18,6 +18,7 @@ namespace Password_Manager
 
             string passVk = "каждыйМожетКинутьКаменьвВолкаНоНеКаждыйМожетКинутьВолкавКамень",
             passOk = "Людмила1964", passYt = null, passMail = "KupitmanIvanNatanych", password = "bibabredow";
+            string userPassword = null;
 
             bool isOpen = false;
 
@@ -25,13 +26,12 @@ namespace Password_Manager
             string userInput = Console.ReadLine();
 
             if (userInput != password) 
-            { 
-                Console.WriteLine("Пароль не верный");
+            {
+                Console.Write("Пароль не верный");
             }
             else
             {
-                isOpen = true; Console.Write("Нажми для продолжения"); 
-                Console.ReadKey(); Console.Clear();
+                isOpen = true; Console.Clear();
             }
 
             while ( isOpen )
@@ -71,19 +71,30 @@ namespace Password_Manager
 
                     case 2:
                         Console.Write("\nВведите ресурс: ");
+
                         switch (Console.ReadLine())
                         {
                             case "вк.ком-мунизм":
+                                Console.Write("\nКакой пароль поставить: ");
+                                userPassword = Console.ReadLine();
+                                passVk = userPassword;
                                 break;
                             case "старчекласники":
+                                Console.Write("\nКакой пароль поставить: ");
+                                userPassword = Console.ReadLine();
+                                passOk = userPassword;
                                 break;
                             case "ютуб.какВыраститьДебила":
+                                Console.Write("\nКакой пароль поставить: ");
+                                userPassword = Console.ReadLine();
+                                passYt = userPassword;
                                 break;
                             case "меил.русь":
+                                Console.Write("\nКакой пароль поставить: ");
+                                userPassword = Console.ReadLine();
+                                passMail = userPassword;
                                 break;
                         }
-                        Console.Write("\nКакой пароль поставить: ");
-                        string userPassword = Console.ReadLine();
                         Console.WriteLine($"\nПароль успешно поменялся на {userPassword} \n-аххаха чувак ты что серьезно что это за пароль XD");
                         Console.ReadKey(); Console.Clear(); break;
                 }
